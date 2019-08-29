@@ -1,0 +1,20 @@
+<archetype>
+
+	<id>log-archetype-java</id>
+	
+	<sources>
+		<source encoding="UTF-8">src/main/java/App.java</source>
+	</sources>
+
+	<resources>
+		<resource encoding="UTF-8">src/main/resources/logback.xml</resource>
+	</resources>
+
+	<testSources>
+		<source encoding="UTF-8">src/test/java/AppTest.java</source>
+	</testSources>
+
+	<testResources>
+		<resource encoding="UTF-8">src/main/resources/logback.xml</resource>
+	</testResources>
+</archetype>

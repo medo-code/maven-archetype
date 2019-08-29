@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+
+	<property name="formatter" value="%date{yyyy-MM-dd HH:mm:ss.SSS,GMT+8} %-5level [%thread]
+		%logger{36} [%file:%line] - %msg%n" />
+
+	<property name="devDir" value="./dev/" />
+	<property name="proDir" value="./pro/" />
+	<property name="logDir" value="${proDir}" />
+
+
+	<appender name="STDOUT"
+		class="ch.qos.logback.core.ConsoleAppender">
+		<layout class="ch.qos.logback.classic.PatternLayout">
+			<!-- <Pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} 
+				- %msg%n</Pattern> -->
+			<Pattern>${formatter}</Pattern>
+		</layout>
+	</appender>
+
+<!-- 
+	<appender name="ERR_ROLLING" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<prudent>true</prudent>
+		<rollingPolicy
+			class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+			<fileNamePattern>${logDir}dataWheel-rt-err-%d{yyyyMMdd'T'HH}.%i.log
+			</fileNamePattern>
+			<maxFileSize>100MB</maxFileSize>
+			<maxHistory>30</maxHistory>
+			<totalSizeCap>20GB</totalSizeCap>
+		</rollingPolicy>
+
+		<filter class="ch.qos.logback.classic.filter.LevelFilter">
+			<level>ERROR</level>
+			<onMatch>ACCEPT</onMatch>
+			<onMismatch>DENY</onMismatch>
+		</filter>
+
+		<append>true</append>
+		<immediateFlush>true</immediateFlush>
+		<encoder>
+			<pattern>${formatter}</pattern>
+		</encoder>
+
+
+
+	</appender>
+
+	<appender name="INFO_ROLLING"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<prudent>true</prudent>
+
+		<rollingPolicy
+			class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+			<fileNamePattern>${logDir}dataWheel-rt-%d{yyyyMMdd'T'HH}.%i.log
+			</fileNamePattern>
+			<maxFileSize>100MB</maxFileSize>
+			<maxHistory>30</maxHistory>
+			<totalSizeCap>20GB</totalSizeCap>
+		</rollingPolicy>
+
+		<filter class="ch.qos.logback.classic.filter.LevelFilter">
+			<level>INFO</level>
+			<onMatch>ACCEPT</onMatch>
+			<onMismatch>DENY</onMismatch>
+		</filter>
+
+		<append>true</append>
+		<immediateFlush>true</immediateFlush>
+		<encoder>
+			<pattern>${formatter}</pattern>
+		</encoder>
+	</appender>
+
+
+ -->
+
+	<root level="info">
+	
+		<appender-ref ref="STDOUT" /> 
+		 <!-- 
+		<appender-ref ref="INFO_ROLLING" />
+		<appender-ref ref="ERR_ROLLING" />
+		 -->
+
+	</root>
+</configuration>
